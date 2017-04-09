@@ -1,0 +1,22 @@
+{
+    "name": "ragboyjr/go-to-billing-client",
+    "description": "Go To Billing REST Client",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "krak/marshal": "^0.2.1",
+        "symfony/serializer": "^3.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RJ Garcia",
+            "email": "rj@bighead.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ragboyjr\\GoToBilling\\": "src"
+        }
+    }
+}

@@ -5,3 +5,4 @@
 Initial Release
 
 - ACH Transaction Types
+- SoapApiClient integration

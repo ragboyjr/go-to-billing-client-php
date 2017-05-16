@@ -53,3 +53,25 @@ array(7) {
 ```
 
 The Model objects reflect the GoToBilling documentation request fields. You can look through the source code to see the supported request types.
+
+### Soap Api
+
+You can also utilize the soap api with the `GoToBillingSoapApiClient`
+
+```php
+<?php
+
+use Ragboyjr\GoToBilling;
+
+$client = GoToBilling\GoToBillingSoapApiClient::createFromConfig(
+    new GoToBilling\Config($user, $pin, $debug = $true)
+);
+$client->getAccounts();
+$client->getTransactions([
+    'po_number' => '1234'
+]);
+// return the inner soap client
+$soap = $client->getSoapClient();
+```
+
+The SoapApiClient will forward all calls to the internal php SoapClient class. However, it will inject an instance of `Ragboyjr\GoToBilling\Model\Soap\MerchantAuth` as the first parameter so that you don't have to for each call.

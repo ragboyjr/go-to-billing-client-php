@@ -43,15 +43,9 @@ class GuzzleGoToBillingApiClient implements GoToBillingApi
     }
 
     public static function guzzleClient() {
-        $handler = GuzzleHttp\HandlerStack::create();
-        $handler->push(GuzzleHttp\Middleware::mapRequest(function($req) {
-            echo GuzzleHttp\Psr7\str($req) . PHP_EOL;
-            return $req;
-        }));
         return new GuzzleHttp\Client([
             'base_uri' => 'https://secure.gotobilling.com/os/system/gateway/',
             'http_errors' => false,
-            'handler' => $handler,
         ]);
     }
 }

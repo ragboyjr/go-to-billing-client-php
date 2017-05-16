@@ -75,3 +75,26 @@ $soap = $client->getSoapClient();
 ```
 
 The SoapApiClient will forward all calls to the internal php SoapClient class. However, it will inject an instance of `Ragboyjr\GoToBilling\Model\Soap\MerchantAuth` as the first parameter so that you don't have to for each call.
+
+### Pimple Service Provider
+
+You can also use the Pimple service provider to create the services.
+
+```php
+<?php
+
+use Ragboyjr\GoToBilling;
+
+// you can use these env vars to configure the GoToBilling\Config entity or just extend it in pimple.
+putenv('GO_TO_BILLING_MERCHANT_ID={id}');
+putenv('GO_TO_BILLING_MERCHANT_PIN={pin}');
+putenv('GO_TO_BILLING_DEBUG=1');
+
+$pimple->register(new GoToBilling\Provider\Pimple\GoToBillingServiceProvider(), [
+    'ragboyjr.go_to_billing.soap_options' => [
+        // any SoapClient options can go here
+    ]
+]);
+$rest_api = $pimple[GoToBilling\GoToBillingApi::class];
+$soap_api = $pimple[GoToBilling\GoToBillingSoapApi::class];
+```

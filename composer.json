@@ -18,5 +18,8 @@
         "psr-4": {
             "Ragboyjr\\GoToBilling\\": "src"
         }
+    },
+    "require-dev": {
+        "pimple/pimple": "^3.0"
     }
 }

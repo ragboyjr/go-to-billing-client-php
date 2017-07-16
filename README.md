@@ -54,6 +54,31 @@ array(7) {
 
 The Model objects reflect the GoToBilling documentation request fields. You can look through the source code to see the supported request types.
 
+### Transaction Responses
+
+Transaction Responses also have a few helper methods for grabbing data from the response. Here's an example with a CC auth and capture using the same client and merchant details as above.
+
+```php
+<?php
+
+$cc = CCTransaction::createWithCard(
+    TransactionType::AUTHORIZE_CAPTURE,
+    uniqid(),
+    '123.40',
+    new Card('370000000000002', '0521', '999')
+);
+
+$resp = $client->transact(new Request($merchant, $customer, $cc));
+
+$resp->getTicketId(); // return the ticket id
+$resp->getStatus(); // return the transaction status
+$resp->isApproved(); // check if status is approved
+$resp->isReceived(); // check if status is received
+$resp->isDeclined(); // check if status is declined
+$resp->isCancelled(); // check if status is cancelled
+$resp->isTimeout(); // check if status is timeout
+```
+
 ### Soap Api
 
 You can also utilize the soap api with the `GoToBillingSoapApiClient`

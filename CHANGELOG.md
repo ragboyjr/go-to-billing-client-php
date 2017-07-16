@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.2 - 2017-07-15
+
 ### Added
 
 - Credit Card Integration #1

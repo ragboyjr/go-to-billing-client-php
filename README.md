@@ -98,3 +98,22 @@ $pimple->register(new GoToBilling\Provider\Pimple\GoToBillingServiceProvider(), 
 $rest_api = $pimple[GoToBilling\GoToBillingApi::class];
 $soap_api = $pimple[GoToBilling\GoToBillingSoapApi::class];
 ```
+
+### Laravel Service Provider
+
+```php
+<?php
+
+use Ragboyjr\GoToBilling\Provider\Laravel\GoToBillingServiceProvider;
+
+// in your app service provider
+$this->app->register(GoToBillingServiceProvider::class);
+// configure soap options
+$this->app['config']->set('go_to_billing.soap_options', [
+    // soap options go here
+]);
+
+// then you can use the following services
+$rest_api = app('Ragboyjr\GoToBilling\GoToBillingApi');
+$soap_api = app('Ragboyjr\GoToBilling\GoToBillingSoapApi');
+```

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Added
+
+- Credit Card Integration #1
+- Unit and integration tests
+- Laravel Service Provider
+
 ## 0.1.1 - 2017-05-15
 
 ### Added

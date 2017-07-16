@@ -4,6 +4,7 @@
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.2",
+        "illuminate/config": "^5.4",
         "krak/marshal": "^0.2.1",
         "symfony/serializer": "^3.2"
     },
@@ -20,6 +21,11 @@
         }
     },
     "require-dev": {
-        "pimple/pimple": "^3.0"
+        "illuminate/container": "^5.4",
+        "illuminate/support": "^5.4",
+        "peridot-php/peridot": "^1.19",
+        "pimple/pimple": "^3.0",
+        "symfony/var-dumper": "^3.3",
+        "vlucas/phpdotenv": "^2.4"
     }
 }

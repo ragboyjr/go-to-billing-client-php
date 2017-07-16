@@ -39,7 +39,7 @@ class GuzzleGoToBillingApiClient implements GoToBillingApi
         $data = (string) $response->getBody();
         $data = $this->encoder->decode($data, 'xml');
 
-        return new Model\Response($response, $data);
+        return new Model\TransactionResponse($response, $data);
     }
 
     public static function guzzleClient() {

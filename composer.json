@@ -4,7 +4,6 @@
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.2",
-        "illuminate/config": "^5.4",
         "krak/marshal": "^0.2.1",
         "symfony/serializer": "^3.2"
     },
@@ -21,6 +20,7 @@
         }
     },
     "require-dev": {
+        "illuminate/config": "^5.4",
         "illuminate/container": "^5.4",
         "illuminate/support": "^5.4",
         "peridot-php/peridot": "^1.19",

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.3 - 2017-08-01
+
 ### Fixed
 
 - Illuminate config is now a dev dep

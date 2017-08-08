@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.1.4 - 2017-08-07
+
+### Added
+
+- `payment_token_id` in transaction field
+- new createWithPaymentTokenId constructor
+- Added TK transaction type
+
 ## 0.1.3 - 2017-08-01
 
 ### Fixed

@@ -9,7 +9,7 @@ abstract class Transaction
     public $amount;
     public $process_date;
     public $invoice_file;
-    public $payment_account_id;
+    public $payment_token_id;
     public $memo;
     public $notes;
     public $occurrence_type;
@@ -22,5 +22,11 @@ abstract class Transaction
         $this->transaction_type = $transaction_type;
         $this->invoice_id = $invoice_id;
         $this->amount = $amount;
+    }
+
+    public static function createWithPaymentTokenId($transaction_type, $invoice_id, $amount, $payment_token_id) {
+        $tran = new static($transaction_type, $invoice_id, $amount);
+        $tran->payment_token_id = $payment_token_id;
+        return $tran;
     }
 }

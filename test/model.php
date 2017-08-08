@@ -26,6 +26,15 @@ describe('CCTransaction', function() {
         );
         assert($tran->invoice_id == '1234' && $tran->ticket_id == '4321');
     });
+    it('can be created from a payment token id', function() {
+        $tran = GoToBilling\Model\CCTransaction::createWithPaymentTokenId(
+            TransactionType::CAPTURE_ONLY,
+            '1234',
+            '12.34',
+            '4321'
+        );
+        assert($tran->invoice_id == '1234' && $tran->payment_token_id == '4321');
+    });
 });
 describe('TransactionResponse', function() {
     describe('isApproved', function() {

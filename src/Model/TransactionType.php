@@ -4,6 +4,8 @@ namespace Ragboyjr\GoToBilling\Model;
 
 final class TransactionType
 {
+    const TOKENIZE = 'TK';
+
     // card types
     const AUTHORIZE_ONLY = 'AS';
     const CAPTURE_ONLY = 'DS';

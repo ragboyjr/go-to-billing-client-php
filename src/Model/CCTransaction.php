@@ -23,4 +23,8 @@ class CCTransaction extends Transaction
         $trans->ticket_id = $ticket_id;
         return $trans;
     }
+
+    public static function createTokenWithCard(Card $card) {
+        return self::createWithCard(TransactionType::TOKENIZE, null, null, $card);
+    }
 }

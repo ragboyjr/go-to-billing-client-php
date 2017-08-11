@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+- `CCTransaction::createTokenWithCard` for tokenizing a card
+- Allowing symfony serializer of 2.7
+
 ## 0.1.4 - 2017-08-07
 
 ### Added

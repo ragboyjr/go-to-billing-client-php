@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.5 - 2017-08-10
+
 ### Added
 
 - `CCTransaction::createTokenWithCard` for tokenizing a card
